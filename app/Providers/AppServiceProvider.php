@@ -27,12 +27,14 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        $language = DB::table('languages')->latest()->first();
-        $alert_product = DB::table('products')->where('is_active', true)->whereColumn('alert_quantity', '>', 'qty')->count();
-        \App::setLocale($language->code);
-        View::share('general_setting', DB::table('general_settings')->latest()->first());
-        View::share('language', $language);
-        View::share('alert_product', $alert_product);
-        Schema::defaultStringLength(191);
+	    if(! \App::runningInConsole()) {
+		    $language = DB::table( 'languages' )->latest()->first();
+		    $alert_product = DB::table( 'products' )->where( 'is_active', true )->whereColumn( 'alert_quantity', '>', 'qty' )->count();
+		    \App::setLocale( $language->code );
+		    View::share( 'general_setting', DB::table( 'general_settings' )->latest()->first() );
+		    View::share( 'language', $language );
+		    View::share( 'alert_product', $alert_product );
+		    Schema::defaultStringLength( 191 );
+	    }
     }
 }
