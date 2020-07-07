@@ -1,5 +1,6 @@
 <?php
-
+	echo 'The silent is golden';
+	/*
 $install = is_dir('install');
 
 if ($install == true) {
@@ -14,5 +15,5 @@ else {
 	    return false;
 	}
 
-	require_once __DIR__.'/public/index.php';
-}
+	require_once __DIR__.'/public/index.php';*/
+
