@@ -11,6 +11,18 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+
+
+	    factory(\App\Language::class, 1)->create(['code'=>'es']);
+	    factory(\App\GeneralSetting::class, 1 )->create([
+	    	'site_title' => 'ERP - Gumonet',
+		    'site_logo'  => 'logo.png',
+		    'currency'   => 'MXN',
+		    'staff_access' => 'own',
+		    'date_format' => 'd/m/Y',
+		    'theme' => 'default.css',
+		    'currency_position' => 'prefix'
+	    ]);
         // $this->call(UsersTableSeeder::class);
     }
 }
