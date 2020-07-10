@@ -28,12 +28,15 @@ class LoginController extends Controller
      */
     protected $redirectTo = '/';
 
-    public function credentials(Request $request)
-    {
-        $credentials = $request->only($this->username(), 'password');
-        $credentials = array_add($credentials, 'is_deleted', '0');
-        return $credentials;
-    }
+    /*public function login ( Request $request ) {
+    	dd('Login');
+    }*/
+	/*public function credentials(Request $request)
+	{
+		$credentials = $request->only($this->username(), 'password');
+		$credentials = array_add($credentials, 'is_deleted', '0');
+		return $credentials;
+	}*/
 
     /**
      * Create a new controller instance.

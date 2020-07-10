@@ -60,11 +60,11 @@
             <form method="POST" action="{{ route('login') }}" id="login-form">
               @csrf
               <div class="form-group-material">
-                <input id="login-username" type="text" name="name" required class="input-material" value="">
+                <input id="login-username" type="text" name="email" required class="input-material" value="">
                 <label for="login-username" class="label-material">{{trans('file.UserName')}}</label>
-                @if ($errors->has('name'))
+                @if ($errors->has('email'))
                     <p>
-                        <strong>{{ $errors->first('name') }}</strong>
+                        <strong>{{ $errors->first('email') }}</strong>
                     </p>
                 @endif
               </div>
@@ -85,7 +85,7 @@
             <p>{{trans('file.Do not have an account?')}}</p><a href="{{url('register')}}" class="signup">{{trans('file.Register')}}</a>
           </div>
           <div class="copyrights text-center">
-            <p>{{trans('file.Developed By')}} <a href="https://ventas.programacionparacompartir.com/" class="external">ventas.programacionparacompartir</a></p>
+
           </div>
         </div>
       </div>

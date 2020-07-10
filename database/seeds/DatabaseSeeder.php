@@ -23,6 +23,47 @@ class DatabaseSeeder extends Seeder
 		    'theme' => 'default.css',
 		    'currency_position' => 'prefix'
 	    ]);
+	    factory(\App\Roles::class, 1 )->create([
+		    'name' => 'Admin',
+		    'description' => 'admin can access all data...',
+		    'guard_name' => 'web',
+		    'is_active' => 1,
+	    ]);
+
+	    //Roles created
+	    factory(\App\Roles::class, 1 )->create([
+		    'name' => 'Admin',
+		    'description' => 'admin can access all data...',
+		    'guard_name' => 'web',
+		    'is_active' => 1,
+	    ]);
+	    factory(\App\Roles::class, 1 )->create([
+		    'name' => 'Owner',
+		    'description' => 'Owner of shop...',
+		    'guard_name' => 'web',
+		    'is_active' => 1,
+	    ]);
+	    factory(\App\Roles::class, 1 )->create([
+		    'name' => 'Staff',
+		    'description' => 'staff has specific acess...',
+		    'guard_name' => 'web',
+		    'is_active' => 1,
+	    ]);
+
+	    //Users
+	    factory(\App\User::class, 1 )->create([
+		    'name' => 'Admin',
+		    'email' => 'admin@admin.com',
+		    'password' => '$2y$10$DWAHTfjcvwCpOCXaJg11MOhsqns03uvlwiSUOQwkHL2YYrtrXPcL6',
+		    'remember_token' => 'fTk2ZyWLTqjDSTSv6hRGqC0sCEHmsFcHhPv2tyUtWPLyVMIaOs7SZWQj0rmR',
+		    'phone' => '9211547895',
+		    'company_name' => 'Gumonet SI',
+		    'role_id' => '1',
+		    /*'biller_id' => '',
+		    'warehouse_id' => '',*/
+		    'is_active' => 1,
+
+	    ]);
         // $this->call(UsersTableSeeder::class);
     }
 }
